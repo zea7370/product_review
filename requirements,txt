@@ -1,7 +1,7 @@
-pickle-mixin
 flask
 pandas
 matplotlib
 wordcloud
+pickle-mixin
 scikit-learn
 gunicorn
