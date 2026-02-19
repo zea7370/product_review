@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Dashboard | Aqua Glow</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Product Sentiment Dashboard</h1>
+
+    <div class="summary-box">
+        <h2>Overall Status: <span style="color: #00f2fe;">{{ overall }}</span></h2>
+        <p class="message">{{ message }}</p>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-box">
+            <p>Positive ({{ positive }}%)</p>
+            <div class="bar positive-bar" style="width: {{ positive }}%;"></div>
+        </div>
+        <div class="chart-box">
+            <p>Neutral ({{ neutral }}%)</p>
+            <div class="bar neutral-bar" style="width: {{ neutral }}%;"></div>
+        </div>
+        <div class="chart-box">
+            <p>Negative ({{ negative }}%)</p>
+            <div class="bar negative-bar" style="width: {{ negative }}%;"></div>
+        </div>
+    </div>
+
+    <div class="charts">
+        <div class="chart">
+            <h3>Distribution</h3>
+            <img src="{{ url_for('static', filename='pie.png') }}" alt="Sentiment Pie Chart">
+        </div>
+
+        <div class="chart">
+            <h3>Sentiment Count</h3>
+            <img src="{{ url_for('static', filename='bar.png') }}" alt="Sentiment Bar Chart">
+        </div>
+
+        <div class="chart">
+            <h3>Positive Themes</h3>
+            <img src="{{ url_for('static', filename='positive_wc.png') }}" alt="Positive Word Cloud">
+        </div>
+
+        <div class="chart">
+            <h3>Negative Issues</h3>
+            <img src="{{ url_for('static', filename='negative_wc.png') }}" alt="Negative Word Cloud">
+        </div>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0;">
+
+    <div class="actions">
+        <a href="/download">
+            <button>Download CSV Report</button>
+        </a>
+        <a href="/">
+            <button style="background: transparent; border: 1px solid #00f2fe;">New Analysis</button>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

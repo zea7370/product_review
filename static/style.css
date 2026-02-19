@@ -1,0 +1,111 @@
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* Dark overlay is vital here to make sure your aqua text/glow is readable over the BW photo */
+    background: linear-gradient(rgba(10, 25, 30, 0.88), rgba(10, 25, 30, 0.88)),
+                url('/static/jo-raymaekers-k-kE9e8wPmI-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #e0f7fa;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 225, 255, 0.2);
+    box-sizing: border-box; /* Crucial: prevents padding from pushing width over 100% */
+}
+
+/* Fix for the text input area */
+textarea {
+    width: 100%; /* Changed from 90% to fit container precisely */
+    max-width: 800px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #00f2fe;
+    border-radius: 12px;
+    color: #00f2fe;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Fix for the Sentiment Bars layout */
+.chart-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left; /* Labels look better left-aligned above the bar */
+}
+
+.chart-box-bar {
+    margin-bottom: 20px;
+}
+
+.bar {
+    height: 12px;
+    border-radius: 10px;
+    margin-top: 8px;
+    width: 0; /* Default for animation */
+    transition: width 1s ease-in-out;
+}
+
+.positive-bar { background: #00ff88; box-shadow: 0 0 12px #00ff88; }
+.neutral-bar  { background: #00d4ff; box-shadow: 0 0 12px #00d4ff; }
+.negative-bar { background: #ff0055; box-shadow: 0 0 12px #ff0055; }
+
+/* The Image Grid - Fixes overlapping */
+.charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.chart {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 2px solid rgba(0, 242, 254, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers images horizontally */
+    justify-content: center; /* Centers images vertically */
+}
+
+.chart img {
+    max-width: 100%; /* Ensures image never exceeds the box width */
+    height: auto;
+    border-radius: 10px;
+}
+
+button {
+    margin: 10px;
+    padding: 12px 30px;
+    border: none;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.8);
+}

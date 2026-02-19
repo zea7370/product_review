@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Review Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Product Review Analyzer</h1>
+
+    <h3>Option 1: Paste Reviews (One Per Line)</h3>
+
+    <form action="/analyze" method="POST" enctype="multipart/form-data">
+
+        <textarea name="reviews_text"
+                  rows="8"
+                  placeholder="Paste multiple reviews here...
+Example:
+This product is amazing
+Very bad quality
+It is okay not great"></textarea>
+
+        <br><br>
+
+        <h3>OR</h3>
+
+        <h3>Option 2: Upload CSV File</h3>
+
+        <p>CSV must contain a column named <b>Review</b></p>
+
+        <input type="file" name="file">
+
+        <br><br>
+
+        <button type="submit">Analyze Reviews</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
